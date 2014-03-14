@@ -1,0 +1,7 @@
+webpay:
+  development:
+    product_id: '4220'
+    pay_item_id: '101'
+    currency: '566'
+    site_redirect_url: '<Your redirect URL>'
+    mac_key: '<Provided MAC Key>'
