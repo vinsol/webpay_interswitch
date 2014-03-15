@@ -22,18 +22,19 @@ It also adds an webpay_interswitch.yml.example file which should be considered w
 Configurations Parameters
 -------------------------
 
-All the below parameters are required to setup the gateway.
+Below parameters are needed to setup the gateway.
 
 * product_id: It is provided when you sign up for interswitch webpay.
     
 * pay_item_id: It is provided when you sign up for interswitch webpay.
 
-* currency: Currently, we only support Naira. Currency Code for Naira is `566`. The payment amount is always specified in Kobo. While interfacing with the gem, you must always pass in the amount in Kobo. `Conversion: 1 Naira = 100 Kobo`
-
-
 * site_redirect_url: This is the URL where the interswitch redirects back with a POST request when the transaction is complete (Successful Or Failed). This is the controller action, where you want to process the transaction response.
 
 * mac_key: It is provided when you sign up for interswitch webpay.
+
+* currency (Optional, defaults to Naira): Currently, we only support Naira. Currency Code for Naira is `566`. The payment amount is always specified in Kobo. While interfacing with the gem, you must always pass in the amount in Kobo. `Conversion: 1 Naira = 100 Kobo`
+
+* test (Optional, defaults to true): This is used to specify Interswitch URL. If false, all the requests are made at the test gateway. For production environments (Making actual payments), you must set this explicitly to false. By default, it would always be set to true.
 
 
 Helper
@@ -66,6 +67,8 @@ You can then call methods on this object like:
     transaction.success?
     
     transaction.fetch_response
+
+    transaction.full_error_message
 
 
 Contributors
