@@ -42,7 +42,7 @@ module WebpayInterswitch
       end
 
       def generate_input_field(name, value, type = 'hidden')
-        "<input type=#{ type } name=#{ name } value=#{ value }/>"
+        "<input type=#{ type } name=#{ name } value=#{ value }>"
       end
 
       ## Returns a string that is used to compute the sha hash for POST request on webpay.
