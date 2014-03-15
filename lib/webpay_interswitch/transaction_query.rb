@@ -19,6 +19,7 @@ module WebpayInterswitch
     # txnref is the unique number sent in request.
     # cardNum is always zero
     # apprAmt is always zero
+    # response is populated when a transactions search query is sent.
     attr_accessor :txnref, :resp, :desc, :payRef, :retRef, :cardNum, :amount, :response
 
     TEST_URL = 'https://stageserv.interswitchng.com/test_paydirect/api/v1/gettransaction.json'
@@ -45,6 +46,23 @@ module WebpayInterswitch
     ## Returns true or false
     def success?
       @response['ResponseCode'] == '00'
+    end
+
+    def full_error_message
+      "#{ error_message }. #{ query_error_message }"
+    end
+
+    ## Returns error message if present. Else returns a blank string.
+    ## This is generally due to incorrect parameters such as product_id, pay_item_id etc.
+    def error_message
+      @desc.strip.gsub(',', '')
+    end
+
+    ## Returns error message recd from the gateway if the txn query was failed.
+    ## else, returns nil
+    ## This is due to: incorrect amount, invalid card number etc.
+    def query_error_message
+      @response['ResponseDescription'] unless success?
     end
 
     def transaction_url

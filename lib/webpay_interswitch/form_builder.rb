@@ -5,7 +5,7 @@ module WebpayInterswitch
 
     def initialize(txn_ref, amount)
       @txn_ref = txn_ref
-      @amount = amount.to_i
+      @amount = amount
     end
 
     def generate_webpay_form(submit_button_text)
@@ -22,7 +22,7 @@ module WebpayInterswitch
     end
 
     def valid?
-      @txn_ref.present? && @amount > 0
+      @txn_ref.present? && Integer(@amount) > 0 rescue false
     end
 
     private
