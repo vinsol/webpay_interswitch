@@ -8,5 +8,6 @@ WebpayInterswitch::Gateway.setup do |config|
   config.currency = gateway_attrs[:currency]
   config.site_redirect_url = gateway_attrs[:site_redirect_url]
   config.mac_key = gateway_attrs[:mac_key]
+  config.test = gateway_attrs[:test]
 
 end

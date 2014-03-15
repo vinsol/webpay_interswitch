@@ -5,3 +5,4 @@ webpay:
     currency: '566'
     site_redirect_url: '<Your redirect URL>'
     mac_key: '<Provided MAC Key>'
+    test: true

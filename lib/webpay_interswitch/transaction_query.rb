@@ -24,6 +24,8 @@ module WebpayInterswitch
 
     TEST_URL = 'https://stageserv.interswitchng.com/test_paydirect/api/v1/gettransaction.json'
 
+    LIVE_URL = 'https://stageserv.interswitchng.com/paydirect/api/v1/gettransaction.json'
+
     def initialize(post_params={}, amount)
       post_params.to_hash.symbolize_keys!
       post_params.each_pair do |key, val|
@@ -66,7 +68,7 @@ module WebpayInterswitch
     end
 
     def transaction_url
-      TEST_URL
+      WebpayInterswitch::Gateway.test ? TEST_URL : LIVE_URL
     end
 
     private
