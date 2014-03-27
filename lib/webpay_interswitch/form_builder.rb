@@ -10,7 +10,7 @@ module WebpayInterswitch
 
     def generate_webpay_form(submit_button_text)
       form_html = "<form action=#{ WebpayInterswitch::Gateway.url } method=post>"
-      
+
       form_html += generate_webpay_elements
 
       form_html += generate_transaction_data_elements
@@ -22,7 +22,7 @@ module WebpayInterswitch
     end
 
     def valid?
-      @txn_ref.present? && Integer(@amount) > 0 rescue false
+      @txn_ref.present? && Integer(@amount.to_s) > 0 rescue false
     end
 
     private

@@ -38,7 +38,7 @@ module WebpayInterswitch
 
         ## Default test to true.
         ## Set this to false explicitly only in production environment.
-        @@test = true unless @@test == false
+        @@test ||= false
       end
 
       def requires!(*required_parameters)
