@@ -24,7 +24,7 @@ module WebpayInterswitch
 
     TEST_URL = 'https://stageserv.interswitchng.com/test_paydirect/api/v1/gettransaction.json'
 
-    LIVE_URL = 'https://stageserv.interswitchng.com/paydirect/api/v1/gettransaction.json'
+    LIVE_URL = 'https://webpay.interswitchng.com/paydirect/api/v1/gettransaction.json'
 
     def initialize(post_params={}, amount)
       post_params.to_hash.symbolize_keys!
