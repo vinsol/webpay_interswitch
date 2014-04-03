@@ -9,7 +9,7 @@ module WebpayInterswitch
 
     TEST_URL = 'https://stageserv.interswitchng.com/test_paydirect/pay'
 
-    LIVE_URL = 'https://stageserv.interswitchng.com/paydirect/pay'
+    LIVE_URL = 'https://webpay.interswitchng.com/paydirect/pay'
 
     ## ACCEPTED_CURRENCIES:
     ## * Naira (In Kobo)
