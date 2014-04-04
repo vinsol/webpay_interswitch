@@ -1,13 +1,13 @@
-WebpayInterswitch
-=================
+#WebpayInterswitch
 
-[![Code Climate](https://codeclimate.com/github/ShubhamGupta/webpay_interswitch.png)](https://codeclimate.com/github/ShubhamGupta/webpay_interswitch)
+
+[![Code Climate](https://codeclimate.com/github/vinsol/webpay_interswitch.png)](https://codeclimate.com/github/vinsol/webpay_interswitch)
 
 
 A simple gem to integrate your Rails app with Webpay Interswitch. It provides methods to add webpay as a payment option in your Rails application out of the box. It also provides a simple API that can be used to fetch transactions (JSON Only).
 
-Getting Started
-------------
+##Getting Started
+
 
 Include the gem in your Rails app and run 
 
@@ -20,8 +20,8 @@ It also adds an webpay_interswitch.yml.example file which should be considered w
  `rails generate webpay_interswitch:install`
 
 
-Helper
-------
+##Helper
+
 
 It comes with a helper method that seamlessly adds a webpay form to your Rails application.
 
@@ -38,8 +38,8 @@ This helper adds a button (Along with all the hidden elements required to make t
 Once you click the submit button, you'll be redirected to the Webpay to carry out the transaction. Upon completion(success Or failure), Webpay will send a POST request to the redirect URL along with a few parameters.
 
 
-Querying Transactions
----------------------
+##Querying Transactions
+
 
 It has an API that can be used to query the transaction.
 
@@ -61,8 +61,8 @@ You can then call methods on this object like:
     transaction.full_error_message
 ```
 
-Configurations Parameters
--------------------------
+##Configurations Parameters
+
 
 Below parameters are needed to setup the gateway.
 
@@ -79,10 +79,8 @@ Below parameters are needed to setup the gateway.
 * test (Optional, defaults to true): This is used to specify Interswitch URL. If true, all the requests are made at the test gateway. For production environments (Making actual payments), you must set this explicitly to false. By default, it would always be set to true.
 
 
-Contributors
-------------
+##Credits
+[![vinsol.com: Ruby on Rails, iOS and Android developers](http://vinsol.com/vin_logo.png "Ruby on Rails, iOS and Android developers")](http://vinsol.com)
 
+Copyright (c) 2014 [vinsol.com](http://vinsol.com "Ruby on Rails, iOS and Android developers"), released under the New MIT License
 
-* [Jitendra Rai](http://www.github.com/jitendra)
-
-* [Shubham Gupta](http://www.github.com/shubhamgupta)
