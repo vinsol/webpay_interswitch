@@ -5,12 +5,13 @@ require 'webpay_interswitch/version'
 Gem::Specification.new do |s|
   s.name        = 'webpay_interswitch'
   s.version     = WebpayInterswitch::VERSION
-  s.authors     = ['Shubham Gupta']
-  s.email       = ['sgupta.89cse@gmail.com']
-  s.homepage    = 'https://github.com/ShubhamGupta/webpay_interswitch'
+  s.authors     = ['Shubham Gupta', 'Jitender Rai']
+  s.email       = ['info@vinsol.com']
+  s.homepage    = 'http://vinsol.com'
   s.files       = Dir["{lib,spec}/**/*", '[A-Z]*']
-  s.summary     = 'A simple gem to integrate your Rails app with Webpay Interswitch'
-  s.description = 'A simple gem to integrate your Rails app with Webpay Interswitch'
+  s.summary     = 'A simple gem to integrate your Rails app with Webpay Interswitch, a nigerian payment gateway'
+  s.description = 'A simple gem to integrate your Rails app with Webpay Interswitch, a nigerian payment gateway'
+  s.license     = 'MIT'
 
   s.add_dependency('rails')
 end
