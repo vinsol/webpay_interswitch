@@ -4,20 +4,24 @@
 [![Code Climate](https://codeclimate.com/github/vinsol/webpay_interswitch.png)](https://codeclimate.com/github/vinsol/webpay_interswitch)
 
 
-A simple gem to integrate your Rails app with Webpay Interswitch. It provides methods to add webpay as a payment option in your Rails application out of the box. It also provides a simple API that can be used to fetch transactions (JSON Only).
+A simple gem to integrate your Rails app with [Webpay Interswitch](http://www.interswitchng.com/), a nigerian payment gateway. It provides methods to add webpay as a payment option in your Rails application out of the box. It also provides a simple API that can be used to fetch transactions (JSON Only).
 
 ##Getting Started
 
 
-Include the gem in your Rails app and run 
+Include the gem in your Rails app by adding it to Gemfile `gem webpay_interswitch` and run 
 
  `bundle install`
+
+And then:
+
+ `rails generate webpay_interswitch:install`
  
 The generator will install an initializer which adds the configuration options for setting up the gateway from the webpay_interswitch.yml file.
 
 It also adds an webpay_interswitch.yml.example file which should be considered while setting up the gateway.
 
- `rails generate webpay_interswitch:install`
+ 
 
 
 ##Helper
