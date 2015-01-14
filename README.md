@@ -86,6 +86,9 @@ Below parameters are needed to setup the gateway.
 
 * test (Optional, defaults to true): This is used to specify Interswitch URL. If true, all the requests are made at the test gateway. For production environments (Making actual payments), you must set this explicitly to false. By default, it would always be set to true.
 
+## Find a Demo Application
+
+##### [Interswitch Demo](https://github.com/ShubhamGupta/interswitch_demo)
 
 ##Credits
 [![vinsol.com: Ruby on Rails, iOS and Android developers](http://vinsol.com/vin_logo.png "Ruby on Rails, iOS and Android developers")](http://vinsol.com)
