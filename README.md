@@ -9,7 +9,9 @@ A simple gem to integrate your Rails app with [Webpay Interswitch](http://www.in
 ##Getting Started
 
 
-Include the gem in your Rails app by adding it to Gemfile `gem 'webpay_interswitch', git: 'https://github.com/vinsol/webpay_interswitch.git'` and run 
+Include the gem in your Rails app by adding it to Gemfile:
+
+ `gem 'webpay_interswitch', git: 'https://github.com/vinsol/webpay_interswitch.git'` and run 
 
  `bundle install`
 
@@ -33,13 +35,13 @@ It comes with a helper method that seamlessly adds a webpay form to your Rails a
     <%= form_for_webpay(txn_ref, amount) %>
 ```
 
-This helper adds a button (Along with all the hidden elements required to make the transaction). You can also configure the text that appears on the button like:
+This helper adds a button (Along with all the hidden elements required to make the transaction). You can also configure the text that appears on the button and add any valid html attributes to it like:
 
 ```ruby
-    <%= form_for_webpay(txn_ref, amount, 'Make Payment') %>
+    <%= form_for_webpay(txn_ref, amount, { submit_button_text: 'Make Payment', class: 'btn-class' }) %>
 ```
 
-Once you click the submit button, you'll be redirected to the Webpay to carry out the transaction. Upon completion(success Or failure), Webpay will send a POST request to the redirect URL along with a few parameters.
+Once you click the submit button, you'll be redirected to the Webpay to carry out the transaction. Upon completion(success or failure), Webpay will send a POST request to the redirect URL along with a few parameters.
 
 
 ##Querying Transactions
