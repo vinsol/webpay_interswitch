@@ -11,7 +11,7 @@ A simple gem to integrate your Rails app with [Webpay Interswitch](http://www.in
 
 Include the gem in your Rails app by adding it to Gemfile:
 
- `gem 'webpay_interswitch', git: 'https://github.com/vinsol/webpay_interswitch.git'` and run 
+ `gem 'webpay_interswitch'` and run 
 
  `bundle install`
 
