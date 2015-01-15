@@ -88,7 +88,7 @@ Below parameters are needed to setup the gateway.
 
 ## Find a Demo Application
 
-##### [Interswitch Demo](https://github.com/ShubhamGupta/interswitch_demo)
+##### [Interswitch Demo](https://github.com/vinsol/webpay_interswitch_gem_demo_app)
 
 ##Credits
 [![vinsol.com: Ruby on Rails, iOS and Android developers](http://vinsol.com/vin_logo.png "Ruby on Rails, iOS and Android developers")](http://vinsol.com)
