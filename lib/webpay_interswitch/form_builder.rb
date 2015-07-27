@@ -3,10 +3,11 @@ module WebpayInterswitch
 
     include WebpayInterswitch::Core
 
-    def initialize(txn_ref, amount, html_options)
+    def initialize(txn_ref, amount, html_options, optional_parameters)
       @txn_ref = txn_ref
       @amount = amount
       @html_options = html_options
+      @optional_parameters = optional_parameters
       sanitize_options
     end
 
@@ -17,16 +18,17 @@ module WebpayInterswitch
 
       form_html += generate_transaction_data_elements
 
+      form_html += generate_optional_parameter_elements
+
       # This generates the submit button alongwith the @submit_button_text
       # If submit_button_text is not provided, it defaults to 'Make Payment'
       form_html += generate_input_field('commit', @submit_button_text, 'submit', @html_options)
 
       form_html += '</form>'
-
     end
 
     def valid?
-      @txn_ref.present? && Integer(@amount.to_s) > 0 rescue false
+      primary_parameters_valid?
     end
 
     private
@@ -43,6 +45,12 @@ module WebpayInterswitch
         txn_elem_html  = generate_input_field('txn_ref', @txn_ref)
         txn_elem_html += generate_input_field('amount', @amount)
         txn_elem_html += generate_input_field('hash', sha_hash(string_for_hash_param))
+      end
+
+      def generate_optional_parameter_elements
+        @optional_parameters.collect do |field_name, field_value|
+          generate_input_field(field_name, field_value)
+        end.join('<br />')
       end
 
       # Generates the input tag alongwith the provided name, value, type and html_options if any.
@@ -77,5 +85,8 @@ module WebpayInterswitch
         @submit_button_text = @html_options.delete(:submit_button_text) || 'Make Payment'
       end
 
+      def primary_parameters_valid?
+        @txn_ref.present? && Integer(@amount.to_s) > 0 rescue false
+      end
   end
 end
