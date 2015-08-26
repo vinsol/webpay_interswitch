@@ -8,9 +8,9 @@ Gem::Specification.new do |s|
   s.authors     = ['Shubham Gupta', 'Jitender Rai']
   s.email       = ['info@vinsol.com']
   s.homepage    = 'http://vinsol.com'
-  s.files       = Dir["{lib,spec}/**/*", '[A-Z]*']
+  s.files       = `git ls-files`.split($/)
   s.summary     = 'A simple gem to integrate your Rails app with Webpay Interswitch, a nigerian payment gateway'
-  s.description = 'A simple gem to integrate your Rails app with Webpay Interswitch, a nigerian payment gateway'
+  s.description = 'A simple gem to integrate Rails app with Webpay Interswitch, a nigerian payment gateway'
   s.license     = 'MIT'
 
   s.add_dependency('rails')
