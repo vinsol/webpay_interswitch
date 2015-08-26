@@ -28,7 +28,7 @@ module WebpayInterswitch
     end
 
     def valid?
-      primary_parameters_valid?
+      @txn_ref.present? && Integer(@amount.to_s) > 0 rescue false
     end
 
     private
@@ -85,8 +85,5 @@ module WebpayInterswitch
         @submit_button_text = @html_options.delete(:submit_button_text) || 'Make Payment'
       end
 
-      def primary_parameters_valid?
-        @txn_ref.present? && Integer(@amount.to_s) > 0 rescue false
-      end
   end
 end
