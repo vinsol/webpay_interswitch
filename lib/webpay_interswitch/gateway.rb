@@ -7,7 +7,7 @@ module WebpayInterswitch
 
     cattr_accessor :product_id, :pay_item_id, :currency, :site_redirect_url, :mac_key, :test
 
-    TEST_URL = 'https://stageserv.interswitchng.com/test_paydirect/pay'
+    TEST_URL = 'https://sandbox.interswitchng.com/webpay/pay'
 
     LIVE_URL = 'https://webpay.interswitchng.com/paydirect/pay'
 
