@@ -3,10 +3,12 @@ module WebpayInterswitch
 
     include WebpayInterswitch::Core
 
-    def initialize(txn_ref, amount, html_options, optional_parameters)
+    def initialize(txn_ref, amount, cust_name, cust_id, html_options, optional_parameters)
       @txn_ref = txn_ref
       @amount = amount
       @html_options = html_options
+      @cust_name = cust_name
+      @cust_id = cust_id
       @optional_parameters = optional_parameters
       sanitize_options
     end
@@ -45,6 +47,8 @@ module WebpayInterswitch
         txn_elem_html  = generate_input_field('txn_ref', @txn_ref)
         txn_elem_html += generate_input_field('amount', @amount)
         txn_elem_html += generate_input_field('hash', sha_hash(string_for_hash_param))
+        txn_elem_html += generate_input_field('cust_name', @cust_name)
+        txn_elem_html += generate_input_field('cust_id', @cust_id)
       end
 
       def generate_optional_parameter_elements
